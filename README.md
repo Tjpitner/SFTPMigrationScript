@@ -9,6 +9,7 @@ The following scripts are used in sequence to create directories, set ownership,
 ```bash
 # Replace './' with 'mkdir ' in migratedfolders.txt
 sed -i 's/\.\//mkdir /g' migratedfolders.txt
+```bash
 
 # Display the contents of migratedfolders.txt
 cat migratedfolders.txt 
