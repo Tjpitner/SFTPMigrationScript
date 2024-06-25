@@ -4,12 +4,19 @@ This repository contains scripts to assist with the migration of directories and
 
 ## Scripts
 
-The following scripts are used in sequence to create directories, set ownership, and apply permissions as part of the SFTP migration process.
+The following scripts are used in sequence to create directories, set ownership, and apply permissions as part of my SFTP migration process.
 
 ```bash
-# Replace './' with 'mkdir ' in migratedfolders.txt
+# On the original legacy SFTP server from the customers directory execute & copy the contents
+cd /home/customerssftp
+find . -type d
+
+# On the new OCI SFTP server execute:
+cd /home/"customerssftp"
+vi migratedfolders.txt
+
+# In the new SFTP server replace './' with 'mkdir ' in migratedfolders.txt
 sed -i 's/\.\//mkdir /g' migratedfolders.txt
-```bash
 
 # Display the contents of migratedfolders.txt
 cat migratedfolders.txt 
